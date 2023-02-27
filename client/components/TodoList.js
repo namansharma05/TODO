@@ -28,7 +28,7 @@ const TodoList = ({tasks,input, setInput, addTask, deleteTask}) => <div classNam
       <Task
         key={item.id}
         taskText={item.taskText}
-        onClick={deleteTask(item.id)}
+        deleteTask={deleteTask(item.id)}
         />
     ))}
   </ul>
