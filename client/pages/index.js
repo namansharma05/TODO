@@ -3,7 +3,7 @@ import ConnectWalletButton from '../components/ConnectWalletButton'
 import TodoList from '../components/TodoList'
 import { TaskContractAddress } from '../config'
 import TaskAbi from "../../backend/build/contracts/TaskContract.json";
-import {ethers,providers,Contract} from 'ethers';
+import {ethers} from 'ethers';
 import { useEffect, useState } from 'react';
 /* 
 const tasks = [
@@ -51,9 +51,8 @@ export default function Home() {
   // Just gets all the tasks from the contract
   const getAllTasks = async () => {
     try{
-      const {ethereum} = window;
       if(ethereum){
-        const provider = new ethers.providers.Web3Provider(ethereum);
+        const provider = new ethers.providers.Web3Provider(window.ethereum,"any");
         const signer = await provider.getSigner();
 
         const TaskContract = new ethers.Contract(
