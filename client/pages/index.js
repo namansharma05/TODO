@@ -3,7 +3,7 @@ import ConnectWalletButton from '../components/ConnectWalletButton'
 import TodoList from '../components/TodoList'
 import { TaskContractAddress } from '../config'
 import TaskAbi from "../../backend/build/contracts/TaskContract.json";
-import {ethers} from 'ethers';
+import {ethers,providers,Contract} from 'ethers';
 import { useEffect, useState } from 'react';
 /* 
 const tasks = [
